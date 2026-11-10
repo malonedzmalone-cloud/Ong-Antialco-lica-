@@ -1,0 +1,13 @@
+Controle de Reuniões — Associação Anti-Alcoólica de Jaboticaba
+
+1. Mantenha index.html, estilos.css e app.js na mesma pasta.
+2. Abra index.html no navegador. O sistema funciona offline.
+3. Preencha data, horário, tema e quantidade de participantes. Use os botões
+   na lista para editar ou excluir uma reunião.
+4. Use Exportar CSV para abrir os registros em uma planilha.
+5. Use Exportar backup JSON para guardar uma cópia dos dados. Importar
+   backup JSON substitui todos os registros atuais após confirmação.
+
+Os dados ficam apenas neste navegador e podem ser perdidos se ele for limpo.
+Faça backups periódicos e use o mesmo navegador, perfil e caminho de arquivo.
+Evite incluir nomes ou informações de saúde no tema da reunião.

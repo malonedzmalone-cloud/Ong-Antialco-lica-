@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controle de Reuniões — Associação Anti-Alcoólica de Jaboticaba</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap brand">
+      <span class="brand-icon" aria-hidden="true">✓</span>
+      <span>Associação Anti-Alcoólica de Jaboticaba</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="intro">
+      <p class="eyebrow">GESTÃO DE REUNIÕES</p>
+      <h1>Controle de Reuniões</h1>
+      <p>Cadastre encontros e acompanhe a participação da associação.</p>
+    </div>
+    <section class="metrics" aria-label="Resumo">
+      <div class="metric"><span>Total de reuniões</span><strong id="total">0</strong></div>
+      <div class="metric"><span>Soma de participações</span><strong id="participacoes">0</strong></div>
+    </section>
+    <p id="aviso" class="notice" role="status" hidden></p>
+    <div class="workspace">
+      <section class="card">
+        <h2 id="form-titulo">Nova reunião</h2>
+        <p>Registre apenas a quantidade de participantes. Evite incluir nomes ou informações de saúde no tema.</p>
+        <form id="form">
+          <div class="fields">
+            <label>Data<input id="data" type="date" min="0001-01-01" max="9999-12-31" required></label>
+            <label>Horário<input id="hora" type="time" required></label>
+          </div>
+          <label>Tema<input id="tema" maxlength="150" placeholder="Ex.: Encontro semanal" required></label>
+          <label>Quantidade de participantes<input id="quantidade" type="number" min="0" max="9007199254740991" step="1" required></label>
+          <div class="actions">
+            <button type="submit" id="salvar" class="primary">Cadastrar reunião</button>
+            <button type="button" id="cancelar" hidden>Cancelar</button>
+          </div>
+        </form>
+      </section>
+      <section class="card">
+        <h2>Reuniões cadastradas</h2>
+        <p>As reuniões mais recentes aparecem primeiro.</p>
+        <p id="vazio" class="empty">Nenhuma reunião cadastrada. Use o formulário para registrar a primeira.</p>
+        <ul id="lista" class="records"></ul>
+      </section>
+    </div>
+    <section class="card transfer">
+      <div>
+        <h2>Exportação e backup</h2>
+        <p>Os dados ficam apenas neste navegador e podem ser perdidos se ele for limpo. Guarde uma cópia em JSON para restaurá-los quando precisar.</p>
+      </div>
+      <div class="actions">
+        <button type="button" id="csv">Exportar CSV</button>
+        <button type="button" id="backup">Exportar backup JSON</button>
+        <button type="button" id="importar">Importar backup JSON</button>
+        <input type="file" id="arquivo" accept=".json,application/json" hidden>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
